@@ -1,0 +1,14 @@
+# Evolution API Configuration
+VITE_EVOLUTION_API_URL=https://evolution.srv1024423.hstgr.cloud/
+VITE_EVOLUTION_API_KEY=BQYHJGJHJWEBHAMADA77923@#@$
+
+# Application Configuration
+VITE_APP_NAME="WhatsAPP Hamada"
+VITE_APP_VERSION="2.3.4"
+
+# Optional: Custom Branding
+VITE_LOGO_URL="/assets/images/custom-logo.png"
+VITE_FAVICON_URL="/assets/images/custom-favicon.ico"
+
+# Optional: Analytics
+VITE_GOOGLE_ANALYTICS_ID=GA_MEASUREMENT_ID
