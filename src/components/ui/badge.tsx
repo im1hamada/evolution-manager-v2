@@ -3,14 +3,14 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-const badgeVariants = cva("inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2", {
+const badgeVariants = cva("inline-flex items-center rounded-full border-2 px-3 py-1 text-xs font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 shadow-sm", {
   variants: {
     variant: {
-      default: "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
-      secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
-      destructive: "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
-      outline: "text-foreground",
-      warning: "border-transparent bg-amber-600 text-amber-100 hover:bg-amber-600/80",
+      default: "border-transparent bg-gradient-to-r from-primary to-primary/90 text-primary-foreground hover:shadow-md hover:shadow-primary/25",
+      secondary: "border-transparent bg-gradient-to-r from-secondary to-secondary/90 text-secondary-foreground hover:shadow-md hover:shadow-secondary/25",
+      destructive: "border-transparent bg-gradient-to-r from-destructive to-destructive/90 text-destructive-foreground hover:shadow-md hover:shadow-destructive/25",
+      outline: "text-foreground border-border hover:bg-accent/50",
+      warning: "border-transparent bg-gradient-to-r from-amber-500 to-amber-600 text-white hover:shadow-md hover:shadow-amber-500/25",
     },
   },
   defaultVariants: {

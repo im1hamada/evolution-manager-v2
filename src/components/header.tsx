@@ -27,13 +27,13 @@ function Header({ instanceId }: { instanceId?: string }) {
   const { data: instance } = useFetchInstance({ instanceId });
 
   return (
-    <header className="flex items-center justify-between px-4 py-2">
-      <Link to="/manager" onClick={navigateToDashboard} className="flex h-8 items-center gap-4">
+    <header className="flex items-center justify-between px-6 py-4 border-b-2 border-border/50 backdrop-blur-sm bg-background/80">
+      <Link to="/manager" onClick={navigateToDashboard} className="flex h-10 items-center gap-4 transition-transform hover:scale-105">
         <img src="/assets/images/evolution-logo.png" alt="Logo" className="h-full" />
       </Link>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
         {instanceId && (
-          <Avatar className="h-8 w-8">
+          <Avatar className="h-10 w-10 ring-2 ring-primary/20 transition-all hover:ring-primary/40">
             <AvatarImage src={instance?.profilePicUrl || "/assets/images/evolution-logo.png"} alt={instance?.name} />
           </Avatar>
         )}
