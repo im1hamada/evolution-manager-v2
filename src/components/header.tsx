@@ -7,7 +7,6 @@ import { logout } from "@/lib/queries/token";
 
 import { LanguageToggle } from "./language-toggle";
 import { ModeToggle } from "./mode-toggle";
-import { useTheme } from "./theme-provider";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader } from "./ui/dialog";
@@ -15,7 +14,6 @@ import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader } from "
 function Header({ instanceId }: { instanceId?: string }) {
   const [logoutConfirmation, setLogoutConfirmation] = useState(false);
   const navigate = useNavigate();
-  const { theme } = useTheme();
 
   const handleClose = () => {
     logout();
@@ -31,7 +29,7 @@ function Header({ instanceId }: { instanceId?: string }) {
   return (
     <header className="flex items-center justify-between px-4 py-2">
       <Link to="/manager" onClick={navigateToDashboard} className="flex h-8 items-center gap-4">
-        <img src={theme === "dark" ? "https://evolution-api.com/files/evo/evolution-logo-white.svg" : "https://evolution-api.com/files/evo/evolution-logo.svg"} alt="Logo" className="h-full" />
+        <img src="/assets/images/evolution-logo.png" alt="Logo" className="h-full" />
       </Link>
       <div className="flex items-center gap-4">
         {instanceId && (

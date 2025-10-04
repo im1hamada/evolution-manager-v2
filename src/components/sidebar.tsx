@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { CircleHelp, Cog, FileQuestion, IterationCcw, LayoutDashboard, LifeBuoy, MessageCircle, Zap, ChevronDown } from "lucide-react";
+import { Cog, IterationCcw, LayoutDashboard, MessageCircle, Zap, ChevronDown } from "lucide-react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -117,31 +117,6 @@ function Sidebar() {
           },
         ],
       },
-      {
-        id: "documentation",
-        title: t("sidebar.documentation"),
-        icon: FileQuestion,
-        link: "https://doc.evolution-api.com",
-        divider: true,
-      },
-      {
-        id: "postman",
-        title: t("sidebar.postman"),
-        icon: CircleHelp,
-        link: "https://evolution-api.com/postman",
-      },
-      {
-        id: "discord",
-        title: t("sidebar.discord"),
-        icon: MessageCircle,
-        link: "https://evolution-api.com/discord",
-      },
-      {
-        id: "support-premium",
-        title: t("sidebar.supportPremium"),
-        icon: LifeBuoy,
-        link: "https://evolution-api.com/suporte-pro",
-      },
     ],
     [t],
   );
@@ -180,7 +155,7 @@ function Sidebar() {
   return (
     <ul className="flex h-full w-full flex-col gap-2 border-r border-border px-2">
       {links.map((menu) => (
-        <li key={menu.title} className={"divider" in menu ? "mt-auto" : undefined}>
+        <li key={menu.title}>
           {menu.children ? (
             <Collapsible defaultOpen={menu.isActive}>
               <CollapsibleTrigger asChild>
@@ -204,8 +179,8 @@ function Sidebar() {
             </Collapsible>
           ) : (
             <Button className={cn("relative flex w-full items-center justify-start gap-2", menu.isActive && "pointer-events-none")} variant={menu.isActive ? "secondary" : "link"}>
-              {"link" in menu && <a href={menu.link} target="_blank" rel="noreferrer" className="absolute inset-0 h-full w-full" />}
-              {"path" in menu && <Link to={`/manager/instance/${instance?.id}/${menu.path}`} className="absolute inset-0 h-full w-full" />}
+              {"link" in menu && <a href={String(menu.link)} target="_blank" rel="noreferrer" className="absolute inset-0 h-full w-full" />}
+              {"path" in menu && <Link to={`/manager/instance/${instance?.id}/${String(menu.path)}`} className="absolute inset-0 h-full w-full" />}
               {menu.icon && <menu.icon size="15" />}
               <span>{menu.title}</span>
             </Button>

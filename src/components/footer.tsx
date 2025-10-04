@@ -15,24 +15,7 @@ function Footer() {
   const clientName = useMemo(() => serverInfo?.clientName, [serverInfo]);
   const version = useMemo(() => serverInfo?.version, [serverInfo]);
 
-  const links = [
-    {
-      name: "Discord",
-      url: "https://evolution-api.com/discord",
-    },
-    {
-      name: "Postman",
-      url: "https://evolution-api.com/postman",
-    },
-    {
-      name: "GitHub",
-      url: "https://github.com/EvolutionAPI/evolution-api",
-    },
-    {
-      name: "Docs",
-      url: "https://doc.evolution-api.com",
-    },
-  ];
+  const links: { name: string; url: string }[] = [];
 
   return (
     <footer className="flex w-full flex-col items-center justify-between p-6 text-xs text-secondary-foreground sm:flex-row">
